@@ -34,7 +34,6 @@ def preprocess_uploaded_image(uploaded_file):
         raise ValueError("No se pudo leer la imagen.")
     img_gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
     img_norm = cv2.normalize(img_gray, None, 0, 255, cv2.NORM_MINMAX)
-    img_norm = img
     return img_norm
 
 # Cargar modelo
