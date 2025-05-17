@@ -2,4 +2,3 @@ scikit-learn
 plotly
 pillow
 opencv-python
-pickle
