@@ -7,7 +7,16 @@ import plotly.graph_objects as go
 import os
 
 # Etiquetas de Fashion MNIST
-CLASS_NAMES = ['Bag','Pullover','Angle boot','Coat','Trouser','Sneaker','Dress','Sandal','Shirt','T-shirt']
+CLASS_NAMES = ['Dress',
+ 'Angle boot',
+ 'T-shirt',
+ 'Sandal',
+ 'Trouser',
+ 'Shirt',
+ 'Pullover',
+ 'Coat',
+ 'Bag',
+ 'Sneaker']
 st.set_page_config(layout="wide")
 st.title("Clasificador Fashion MNIST con modelo de aprendizaje precargado")
 
@@ -25,6 +34,7 @@ def preprocess_uploaded_image(uploaded_file):
         raise ValueError("No se pudo leer la imagen.")
     img_gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
     img_norm = cv2.normalize(img_gray, None, 0, 255, cv2.NORM_MINMAX)
+    img_norm = img
     return img_norm
 
 # Cargar modelo
